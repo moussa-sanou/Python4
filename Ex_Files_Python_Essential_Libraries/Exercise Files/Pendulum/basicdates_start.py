@@ -13,15 +13,28 @@ print(isinstance(dt1, datetime))
 print(dt1.timezone.name)
 
 # TODO: convert the time to another time zone
-#test commit
+dt2 = dt1.in_timezone("Europe/Paris")
+print(dt2)
 
 # TODO: create a new datetime using the now() function
-
+dt3 = pendulum.now("Africa/Abidjan")
+print(dt3)
+print(dt3.timezone.name)
 
 # TODO: Use the local function function
-
+here = pendulum.local(2022, 2, 22)
+print(here)
+print(here.timezone.name)
 
 # TODO: Use today, tomorrow, yesterday
-
+today = pendulum.today()
+tomorrow = pendulum.tomorrow()
+yesterday = pendulum.yesterday("America/Chicago")
+print(today)
+print(tomorrow)
+print(yesterday)
 
 # TODO: create a datetime from a system timestamp
+t = time.time()
+dt4 = pendulum.from_timestamp(t)
+print(dt4)

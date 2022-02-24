@@ -12,5 +12,5 @@ print(string.punctuation)
 test_string1 = "The quick brown fox jumps over the lazy dog on the 1st of December"
 test_string2 = "Supercalifragilistic"
 test_string3 = "90210"
-
+#snew
 # TODO: String testing methods

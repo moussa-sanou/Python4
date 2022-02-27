@@ -28,10 +28,15 @@ def useSniffer():
 
 # TODO: Write data to a CSV file
 def writerSample():
-    pass
+    with open("SampleData.csv", mode="w") as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(["Name", "Department", "Location"])
+        csvwriter.writerow(["Tonton Leboss", "Engineering", "Abidjan"])
+        csvwriter.writerow(["Sami Dollars", "Finance", "San Pedro"])
+        csvwriter.writerow(["John Doe", "Accounting", "San Francisco"])
 
 
 # Exercise the samples
 # readerSample()
-# writerSample()
-useSniffer()
+writerSample()
+# useSniffer()

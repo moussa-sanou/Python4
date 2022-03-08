@@ -22,13 +22,6 @@ class Solution():
                 count = 0
         return max(max_count, count)
 
-# def main():
-#     nums = [1, 1, 0, 1, 1, 1]
-#     task = Solution()
-#     task.findMaxConse(nums)
-
-# if __name__=='__main__':
-#     main()
 
 nums = [1,0,1,1,0,1]
 task = Solution()

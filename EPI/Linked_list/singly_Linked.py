@@ -103,3 +103,16 @@ class linkedList:
         else:
             previous.set_next(current.get_next())
 
+    def printNode(self):
+        current = self.head
+        while current:
+            print(current.data)
+            current = current.get_next()
+
+
+my_list = linkedList()
+print("Inserting new node")
+print(my_list.add_front(5))
+print(my_list.add_front(2))
+print(my_list.add_front(3))
+my_list.printNode()

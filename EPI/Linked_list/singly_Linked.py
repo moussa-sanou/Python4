@@ -110,9 +110,5 @@ class linkedList:
             current = current.get_next()
 
 
-my_list = linkedList()
-print("Inserting new node")
-print(my_list.add_front(5))
-print(my_list.add_front(2))
-print(my_list.add_front(3))
-my_list.printNode()
+N_node = node('apple')
+print(N_node.get_data())

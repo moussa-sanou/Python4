@@ -10,31 +10,25 @@
 # Input: nums = [1,0,1,1,0,1]
 # Output: 2
 
-# class Solution():
-#     def findMaxConse(self, nums):
-#         count = 0
-#         max_count = 0
-#         for i in nums:
-#             if i == 1:
-#                 count += 1
-#             else:
-#                 max_count = max(count, max_count)
-#                 count = 0
-#         return max(max_count, count)
-#
-#
-# nums = [1,0,1,1,0,1]
-# task = Solution()
-# task.findMaxConse(nums)
-# print(task.findMaxConse(nums))
-
-class Solution(object):
-    def findNumbers(self, nums):
+class Solution():
+    def findMaxConse(self, nums):
         count = 0
+        max_count = 0
         for i in nums:
-            if len(str(i)) % 2 == 0:
+            if i == 1:
                 count += 1
-        return count
+            else:
+                max_count = max(count, max_count)
+                count = 0
+        return max(max_count, count)
+
+
+nums = [1,0,1,1,0,1]
+task = Solution()
+task.findMaxConse(nums)
+print(task.findMaxConse(nums))
+
+
 
 
 

@@ -67,13 +67,27 @@ class Singlyllist:
             current = current.get_next()
         return  size
 
+    # Create a function to search a node in the LL
+    def search(self, data):
+        # Look for the head node if it is none return no node to search
+        if self.head is None:
+            return "Linked list is empty. No nodes to search"
+        # If the head node is not none traverse the ll
+        current = self.head
+        # If the head node is not none loop through the rest of the ll to look for the searched data
+        while current is not None:
+            # Check if the node data matches what were are looking for
+            if current.get_data() == data:
+                return True
+            else:
+                current.get_next()
+        return False
+
 sll = Singlyllist()
-sll.size()
-print(sll.size())
 sll.add_front(1)
 sll.add_front(2)
 sll.add_front(3)
-sll.add_front(1)
+sll.search("bird")
+print(sll.search("bird"))
 
-print(sll.size())
 

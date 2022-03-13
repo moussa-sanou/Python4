@@ -29,6 +29,7 @@ class Node:
 
 
 ''' Create a singly linkedlist'''
+# LinkedList do not contain nodes instead they have a head attribute that point to the first node the linkedlist if one exist
 
 class Singlyllist:
 
@@ -40,13 +41,39 @@ class Singlyllist:
     def __repr__(self):
         return self.head
 
-list1 = Node('apple')
-list1.get_data()
-# print(list1.get_data())
-list1.set_data(7)
-list1.get_data()
-print(list1.get_data())
-list2 = Node('carrot')
-list1.set_next(list2)
-list1.get_next()
-print(list1.get_next())
+    # Define a function to check if the LL is empty it will return True or False if the ll is empty or not
+    def is_empty(self):
+        return self.head is None
+
+    # Define a function to add a node at the front of the LL
+    def add_front(self, new_data):
+        # Create a new node
+        temp = Node(new_data)
+        # Change the pointer of the temp node to point to the self.head
+        temp.set_next(self.head)
+        # Now we need to assign the temp variable as the head of the ll
+        self.head = temp
+
+    # Check the size of a ll the function will traverse the ll and return an integer value representing the number of nodes in the ll
+    def size(self):
+        size = 0
+        # First check if the ll is empty is yes return 0 if no move to the next node
+        if self.head is None:
+            return 0
+        # Create a variable representing the head of the ll
+        current = self.head
+        while current is not None: # if current is not none there are some node left to count
+            size += 1
+            current = current.get_next()
+        return  size
+
+sll = Singlyllist()
+sll.size()
+print(sll.size())
+sll.add_front(1)
+sll.add_front(2)
+sll.add_front(3)
+sll.add_front(1)
+
+print(sll.size())
+

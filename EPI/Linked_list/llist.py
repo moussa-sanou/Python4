@@ -68,26 +68,55 @@ class Singlyllist:
         return  size
 
     # Create a function to search a node in the LL
+    # Traverse the ll and returns true if the data searched for is present and false if it is not
     def search(self, data):
-        # Look for the head node if it is none return no node to search
         if self.head is None:
-            return "Linked list is empty. No nodes to search"
-        # If the head node is not none traverse the ll
+            return "Linked list is empty. No Nodes to search."
+
         current = self.head
-        # If the head node is not none loop through the rest of the ll to look for the searched data
         while current is not None:
-            # Check if the node data matches what were are looking for
             if current.get_data() == data:
                 return True
             else:
-                current.get_next()
+                current = current.get_next()
+
         return False
 
+    # Remove a node from a LL
+    def remove(self, data):
+        if self.head is None:
+            return "Linked list empty no node to remove."
+
+        current = self.head
+        previous = None
+        found = False
+        while not found:
+            if current.get_data() == data:
+                found = True
+            else:
+                if current.get_next() == None:
+                    return "A node with that data value is not present."
+                else:
+                    previous = current
+                    current.get_next()
+        if previous is None:
+            self.head = current.get_next()
+        else:
+            previous.set_next(current.get_next())
+
+
+
 sll = Singlyllist()
-sll.add_front(1)
-sll.add_front(2)
-sll.add_front(3)
-sll.search("bird")
-print(sll.search("bird"))
+
+sll.add_front('apple')
+sll.add_front('berry')
+sll.add_front('cherry')
+sll.remove('berry')
+sll.head
+print(sll.head)
+
+
+
+
 
 

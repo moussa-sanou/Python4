@@ -31,9 +31,27 @@ class Node:
     def set_previous(self, new_previous):
         self.previous =  new_previous
 
-node1 = Node(1)
-node2 = Node(2)
-node1.get_previous()
-node1.set_previous(node2)
-node1.get_previous()
-print(node1.get_previous())
+
+class DoublyLL:
+
+    def __init__(self):
+        self.head = None
+
+    def __repr__(self):
+        return "<DLL object: head=>".format(self.head)
+
+    def is_empty(self):
+        return self.head is None
+
+    def size(self):
+        pass
+
+    def search(self, data):
+        pass
+
+    def add_front(self, data):
+        pass
+
+    def remove(self, data):
+        pass
+

@@ -44,14 +44,69 @@ class DoublyLL:
         return self.head is None
 
     def size(self):
-        pass
+            size = 0
+            # First check if the ll is empty is yes return 0 if no move to the next node
+            if self.head is None:
+                return 0
+            # Create a variable representing the head of the ll
+            current = self.head
+            while current is not None:  # if current is not none there are some node left to count
+                size += 1
+                current = current.get_next()
+            return size
 
     def search(self, data):
-        pass
+        if self.head is None:
+            return "Linked list is empty. No Nodes to search."
 
-    def add_front(self, data):
-        pass
+        current = self.head
+        while current is not None:
+            if current.get_data() == data:
+                return True
+            else:
+                current = current.get_next()
+
+        return False
+
+    def add_front(self, new_data):
+        temp = Node(new_data)
+        temp.set_next(self.head)
+
+        if self.head is not None:
+            self.head.set_previous(temp)
+
+        self.head = temp
 
     def remove(self, data):
-        pass
+        if self.head is None:
+            return "Linked List is empty. No nodes to remove."
 
+        current = self.head
+        found = False
+        while not found:
+            if current.get_data() == data:
+                found = True
+            else:
+                if current.get_next() is None:
+                    return "A Node with that data value is not present."
+                else:
+                    current = current.get_next()
+        if current.previous is None:
+            self.head = current.get_next()
+        else:
+            current.previous.set_next(current.get_next())
+            current.next.set_previous(current.get_previous())
+
+dll = DoublyLL()
+dll.size()
+print(dll.size())
+dll.add_front(1)
+dll.head
+print(dll.head)
+dll.size()
+print(dll.size())
+dll.add_front(2)
+dll.head
+print(dll.head)
+dll.size()
+print(dll.size())

@@ -7,7 +7,7 @@ class Node:
 
     # Define a function for object representation
     def __repr__(self):
-        return self.data
+        return "DLLNode object: data={}".format(self.data)
 
     # Define a function to return the self.data attributes
     def get_data(self):
@@ -30,3 +30,10 @@ class Node:
 
     def set_previous(self, new_previous):
         self.previous =  new_previous
+
+node1 = Node(1)
+node2 = Node(2)
+node1.get_previous()
+node1.set_previous(node2)
+node1.get_previous()
+print(node1.get_previous())

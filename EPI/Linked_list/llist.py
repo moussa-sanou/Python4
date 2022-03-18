@@ -106,14 +106,8 @@ class Singlyllist:
 
 
 
-sll = Singlyllist()
 
-sll.add_front('apple')
-sll.add_front('berry')
-sll.add_front('cherry')
-sll.remove('berry')
-sll.head
-print(sll.head)
+
 
 
 

@@ -9,7 +9,11 @@ class queue:
         self.items.insert(0, item)
 
     def dequeue(self):
-        pass
+        '''Retruns and remove the front most item of the queue, which is represented by the last item in the list
+        The runtime is O(1), or constant time because indexing to the end of a list happens in constant time.'''
+        if self.items:
+            return self.items.pop()
+        return None
 
     def peek(self):
         pass
@@ -21,7 +25,6 @@ class queue:
         pass
 
 my_q = queue()
-my_q.enqueue('apple')
-my_q.enqueue('grape')
+my_q.dequeue()
 my_q.items
 print(my_q.items)

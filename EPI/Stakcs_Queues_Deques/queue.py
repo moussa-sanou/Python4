@@ -23,7 +23,9 @@ class queue:
         return None
 
     def size(self):
-        pass
+        '''Returns the size of the queue, which is represent by the length of the list.
+        The runtime is O(1), or constant time, because we are only returning the length.'''
+        return len(self.items)
 
     def is_empty(self):
         pass

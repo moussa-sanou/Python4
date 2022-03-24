@@ -28,7 +28,9 @@ class queue:
         return len(self.items)
 
     def is_empty(self):
-        pass
+        '''Returning a Boolean value expressing wether or not the list representing the queue is empty.
+        runs in constant time O(1)'''
+        return self.items == []
 
 my_q = queue()
 my_q.peek()

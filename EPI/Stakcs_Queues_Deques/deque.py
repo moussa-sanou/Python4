@@ -36,10 +36,20 @@ class Deque:
         return None
 
     def peek_front(self):
-        pass
+        '''Returns the value found at the 0th index of the list, which represents the front of the deque.
+
+        The runtime is constant because all we are doing is indexing into a list'''
+        if self.items:
+            return self.items[0]
+        return None
 
     def peek_rear(self):
-        pass
+        '''Returns the value found at the -1th, or last, index.
+
+        The runtime is constant because all we are doing is indexing into a list'''
+        if self.items:
+            return self.items[-1]
+        return None
 
     def size(self):
         pass
@@ -52,12 +62,11 @@ my_n.add_front('apple')
 my_n.add_front('banana')
 my_n.add_front('carrot')
 my_n.items
-# print(my_n.items)
-
-my_n.remove_front()
-print(my_n.remove_front())
-# my_n.items
-# print(my_n.items)
+print(my_n.items)
+my_n.peek_front()
+print(my_n.peek_front())
+my_n.peek_rear()
+print(my_n.peek_rear())
 
 
 

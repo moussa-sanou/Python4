@@ -18,10 +18,22 @@ class Deque:
         self.items.append(item)
 
     def remove_front(self):
-        pass
+        '''Removes and return the item in the 0th index of the list, which represents the front of the deque.
+
+        The runtime is linear, or O(n), because when we remove an item from the 0th index, all the other items have to
+        shift one index to the left.'''
+
+        if self.items:
+            return self.items.pop(0)
+        return None
 
     def remove_rear(self):
-        pass
+        '''Removes and returns the last item of the list, which represents the rear of the Deque.
+
+        The runtime is constant because all we are doing is indexing to the end of a list.'''
+        if self.items:
+            return self.items.pop()
+        return None
 
     def peek_front(self):
         pass
@@ -35,9 +47,18 @@ class Deque:
     def is_empty(self):
         pass
 
-my_d = Deque()
-my_d.add_front('apple')
-my_d.add_front('banana')
-my_d.add_rear('carrot')
-my_d.items
-print(my_d.items)
+my_n = Deque()
+my_n.add_front('apple')
+my_n.add_front('banana')
+my_n.add_front('carrot')
+my_n.items
+# print(my_n.items)
+
+my_n.remove_front()
+print(my_n.remove_front())
+# my_n.items
+# print(my_n.items)
+
+
+
+

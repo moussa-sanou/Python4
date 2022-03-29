@@ -33,11 +33,5 @@ class queue:
         return self.items == []
 
 my_q = queue()
-my_q.peek()
-print(my_q.peek())
-my_q.enqueue('apple')
-my_q.enqueue('banana')
-my_q.items
-print(my_q.items)
-my_q.peek()
-print(my_q.peek())
+my_q.is_empty()
+print(my_q.is_empty())

@@ -52,21 +52,27 @@ class Deque:
         return None
 
     def size(self):
-        pass
+        '''Return the lenght of the list, which is representing the Deque.
+
+        The runtime will be constant because all we are doing is finding the length of a list and returning that value.'''
+
+        return len(self.items)
 
     def is_empty(self):
-        pass
+        '''Checks to see if the list representing our deque is empty. Returns True if it is, or false if it isn't.
+
+        The runtime is constant because all we are doing is comparing values.'''
+
+        return self.items == []
 
 my_n = Deque()
-my_n.add_front('apple')
-my_n.add_front('banana')
-my_n.add_front('carrot')
-my_n.items
-print(my_n.items)
-my_n.peek_front()
-print(my_n.peek_front())
-my_n.peek_rear()
-print(my_n.peek_rear())
+# my_n.add_front('apple')
+# my_n.add_front('banana')
+# my_n.add_front('carrot')
+# my_n.items
+# print(my_n.items)
+my_n.is_empty()
+print(my_n.is_empty())
 
 
 

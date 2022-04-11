@@ -3,8 +3,8 @@
 
 class HashTable:
     def __init__(self):
-        self.Max = 100
-        self.arr = [ [] for i in range(self.Max)]
+        self.Max = 10
+        self.arr = [[] for i in range(self.Max)]
 
     #Hash function
     def get_hash(self, key):
@@ -19,7 +19,7 @@ class HashTable:
         found = False
         for idx, element in enumerate(self.arr[h]):
             if len(element)==2 and element[0]==key:
-                self.arr[h][idx] = (key, val)
+                self.arr[h][idx] = (key,val)
                 found = True
                 break
         if not found:
@@ -29,3 +29,11 @@ class HashTable:
     def __getitem__(self, index):
         h = self.get_hash(index)
         return self.arr[h]
+
+t = HashTable()
+t["march 6"] = 120
+t["march 6"] = 78
+t["march 8"] = 67
+t["march 9"] = 4
+t["march 17"] = 459
+print(t.arr)

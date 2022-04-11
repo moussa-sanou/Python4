@@ -31,9 +31,15 @@ class HashTable:
         h = self.get_hash(key)
         self.arr[h] = val
 
+    # Create a function to get key value
     def __getitem__(self, key):
         h = self.get_hash(key)
         return self.arr[h]
+
+    # Create a function to delete key value
+    def __delitem__(self, key):
+        h = self.get_hash(key)
+        self.arr[h] = None
 
 t = HashTable()
 t['march 6'] = 130

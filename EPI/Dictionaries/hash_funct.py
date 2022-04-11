@@ -17,7 +17,7 @@
 class HashTable:
     def __init__(self):
         self.Max = 100
-        self.arr = [None for i in range(self.Max)]
+        self.arr = [ None for i in range(self.Max)]
 
     #Hash function
     def get_hash(self, key):

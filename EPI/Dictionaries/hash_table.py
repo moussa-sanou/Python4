@@ -24,3 +24,4 @@ class hashtest:
     pass
 
 print(hash(hashtest))
+

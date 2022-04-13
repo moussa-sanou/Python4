@@ -26,9 +26,18 @@ class HashTable:
             self.arr[h].append((key, val))
 
     # Create a function to get key value
-    def __getitem__(self, index):
-        h = self.get_hash(index)
-        return self.arr[h]
+    def __getitem__(self, key):
+        h = self.get_hash(key)
+        for element in self.arr[h]:
+            if element[0] == key:
+                return element[1]
+
+    def __delitem__(self, key):
+        h = self.get_hash(key)
+        for index, element in enumerate(self.arr[h]):
+            if element[0] == key:
+                del self.arr[h][index]
+
 
 t = HashTable()
 t["march 6"] = 120
@@ -36,4 +45,4 @@ t["march 6"] = 78
 t["march 8"] = 67
 t["march 9"] = 4
 t["march 17"] = 459
-print(t.arr)
+print(t["march 6"])

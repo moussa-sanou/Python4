@@ -24,3 +24,4 @@ node.left.right = Node(6)
 node.right.left = Node(13)
 node.right.right = Node(10000)
 
+

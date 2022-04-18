@@ -1,5 +1,7 @@
 
-#Binary search tree implementation
+# Binary search tree implementation
+
+# Create a Node class
 class Node:
     def __init__(self, data):
         self.data = data
@@ -8,7 +10,7 @@ class Node:
 
     def search(self, target):
         if self.data == target:
-            print("Found it")
+            print('found it ')
             return self
 
         if self.left and self.data > target:
@@ -17,10 +19,10 @@ class Node:
         if self.right and self.data < target:
             return self.right.search(target)
 
-        print("Value is not in tree")
+        print('Not Found')
 
 class Tree:
-    def __init__(self, root, name=''):
+    def __init__(self, root, name = ''):
         self.root = root
         self.name = name
 
@@ -37,9 +39,12 @@ node.left.left = Node(2)
 node.left.right = Node(6)
 
 node.right.left = Node(13)
-node.right.right = Node(10000)
+node.right.right = Node(20000)
 
-myTree = Tree(node, 'Sami\'s Tree')
+myTree = Tree(node, 'Sami\'s')
 
-# found = myTree.search(10000)
-# print(found.data)
+found = myTree.search(20000)
+
+print(found.data)
+
+

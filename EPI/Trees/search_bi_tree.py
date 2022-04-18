@@ -41,5 +41,5 @@ node.right.right = Node(10000)
 
 myTree = Tree(node, 'Sami\'s Tree')
 
-found = myTree.search(10000)
-print(found.data)
+# found = myTree.search(10000)
+# print(found.data)

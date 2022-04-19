@@ -43,7 +43,7 @@ node.right.right = Node(20000)
 
 myTree = Tree(node, 'Sami\'s')
 
-found = myTree.search(20000)
+found = myTree.search(10000)
 
 print(found.data)
 

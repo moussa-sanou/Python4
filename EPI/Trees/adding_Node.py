@@ -35,7 +35,7 @@ class Node:
         return nodes
 
     def add(self, data):
-        if self.data == data:
+        if data == self.data:
             return
         if data < self.data:
             if self.left is None:

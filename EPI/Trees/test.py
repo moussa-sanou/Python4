@@ -126,7 +126,7 @@ class Tree:
         return self.root.height()
 
     def add(self, data):
-        self.root.add(data)
+         return self.root.add(data)
 
 
 tree = Tree(Node(50))

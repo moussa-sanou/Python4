@@ -50,8 +50,9 @@ class Node:
                 minValue = self.right.findMin()
                 self.data = minValue
                 self.right = self.right.delete(minValue)
+                return self
             else:
-                return self.left and self.right
+                return self.left or self.right
 
         if self.right and target > self.data:
             self.right = self.right.delete(target)
@@ -79,9 +80,14 @@ class Tree:
 tree = Tree(Node(50))
 tree.root.left = Node(25)
 tree.root.right = Node(75)
-tree.add(10)
-tree.add(76)
+tree.root.right.left = Node(67)
+tree.root.right.right = Node(100)
+tree.root.right.right.right = Node(120)
+tree.root.right.right.left = Node(80)
+tree.root.right.right.left.right = Node(92)
 
-print(tree.root.right.right.data)
+tree.delete(50)
+
+print(tree.root.right.data)
 
 

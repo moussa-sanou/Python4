@@ -36,6 +36,33 @@ class Node:
             else:
                 self.right.add(new_data)
 
+    # Delete a node following the RTFM approach (Right Tree Find Minimum: RTFM)
+    def findMin(self):
+        if self.left:
+            return self.left.findMin()
+        return self.data
+
+    def delete(self, target):
+        if self.data == target:
+            #Do the deletion here
+            if self.left and self.right:
+                # Right Tree Find Minimum(RTFM)
+                minValue = self.right.findMin()
+                self.data = minValue
+                self.right = self.right.delete(minValue)
+            else:
+                return self.left and self.right
+
+        if self.right and target > self.data:
+            self.right = self.right.delete(target)
+
+        if self.left and target < self.data:
+            self.left = self.left.delete(target)
+
+        return self
+
+
+
 class Tree:
     def __init__(self, root):
         self.root = root
@@ -45,6 +72,9 @@ class Tree:
 
     def add(self, new_data):
         return self.root.add(new_data)
+
+    def delete(self, target):
+        self.root = self.root.delete(target)
 
 tree = Tree(Node(50))
 tree.root.left = Node(25)

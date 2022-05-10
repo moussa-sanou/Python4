@@ -8,8 +8,14 @@ class Graph:
         for v1, v2 in edges:
             self.data[v1].append(v2)
             self.data[v2].append(v1)
+    # The following functions are use in making the output of the adjacency easily readable
+    def __repr__(self):
+        return "\n".join(["{}: {}".format(n, neighbors) for n, neighbors in enumerate(self.data)])
+
+    def __str__(self):
+        return self.__repr__()
 
 num_vrtx = 5
 edges = [(0,1), (0,4), (1,2), (1,3), (1,4), (2,3), (3,4)]
 graph1 = Graph(num_vrtx, edges)
-print(graph1.data)
+print(graph1)

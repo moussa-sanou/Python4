@@ -19,3 +19,13 @@ num_vrtx = 5
 edges = [(0,1), (0,4), (1,2), (1,3), (1,4), (2,3), (3,4)]
 graph1 = Graph(num_vrtx, edges)
 print(graph1)
+
+
+# Pros of adjacency list
+''' An adjacency list is efficient in terms of storage because we only need to store the values for the edges. For a 
+sparse graph with millions of vertices and edges, this can mean a lot of saved space
+It also helps to find all vertices adjacent to a vertex easily.'''
+
+# Cons of Adjacency list
+'''Finding the adjacent list is not quicker than the adjacency matrix because all the connected nodes must be first 
+explored to find them'''

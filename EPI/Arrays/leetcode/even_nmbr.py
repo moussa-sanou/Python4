@@ -17,3 +17,10 @@ Therefore only 12 and 7896 contain an even number of digits'''
 # Output: 1
 # Explanation:
 '''Only 1771 contains an even number of digits'''
+
+def even_number(nums):
+    count = 0
+    for i in nums:
+        if len(str(i)) % 2 == 0:
+            count += 1
+    return count

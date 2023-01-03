@@ -2,19 +2,29 @@
 # Turn this diagram into code
 
 class Customers():
-    def __init__(self, CreateCompany, CreatePerson, DeleteCompany, DeletePerson):
-        self.CreateCompany = CreateCompany
-        self.CreatePerson = CreatePerson
-        self.DeleteCompany = DeleteCompany
-        self.DeletePerson =DeletePerson
+    def CreateCompany(self):
+        pass
+
+    def CreatePerson(self):
+        pass
+
+    def DeleteCompany(self):
+        pass
+
+    def DeletePerson(self):
+        pass
 
 class Customer():
     def __init__(self, address, phone):
         self.address = address
         self.phone = phone
 
-class UpdateCustomer(Customer):
-    pass
+    def update(self):
+        pass
+
+class Company(Customer):
+    def __init__(self, name, regno):
+        Customer.__init__(self, name, regno)
 
 class Orders():
     def __init__(self, Create, Cancel):
